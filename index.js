@@ -12,7 +12,7 @@ module.exports = function addressPlugin (schema, options) {
 		options = {};
 	}
 
-	var path = options.path || 'path',
+	var path = options.path || 'address',
 		type = options.type || false,
 		primary = options.primary || false,
 		created = options.created || false,
