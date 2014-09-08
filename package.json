@@ -1,0 +1,32 @@
+{
+	"name": "mongoose-address",
+	"version": "0.0.1",
+	"description": "Mongoose address",
+	"author": {
+		"name": "Zlatko Fedor",
+		"email": "zfedor@gmail.com",
+		"url": "http://www.cherrysro.com/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/seeden/mongoose-address.git"
+	},
+	"keywords": [
+		"mongoose",
+		"address"
+	],
+	"private": false,
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.opensource.org/licenses/MIT"
+		}
+	],
+	"main": "./lib/",
+	"engines": {
+		"node": ">= 0.10.0"
+	},
+	"dependencies": {
+		"underscore": "~1.7.0"
+	}
+}
