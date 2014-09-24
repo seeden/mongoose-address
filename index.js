@@ -16,16 +16,23 @@ module.exports = function addressPlugin (schema, options) {
 		type = options.type || false,
 		primary = options.primary || false,
 		created = options.created || false,
+		numbers = options.numbers || false,
 		updated = options.updated || false;
 
 	var data = {
 		street1 	: { type: String },
 		street2 	: { type: String },
 		city 		: { type: String },
+		boroughs    : { type: String },
 		state 		: { type: String }, //TEXAS
 		zip 		: { type: String },
 		country     : { type: String } //USA
 	};
+
+	if(numbers) {
+		data.street1Number = { type: Number };
+		data.street2Number = { type: Number };
+	}
 
 	if(created) {
 		data.created = { type: Date, default: Date.now };
