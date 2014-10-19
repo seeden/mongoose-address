@@ -17,7 +17,8 @@ module.exports = function addressPlugin (schema, options) {
 		primary = options.primary || false,
 		created = options.created || false,
 		numbers = options.numbers || false,
-		updated = options.updated || false;
+		updated = options.updated || false,
+		phone = options.phone || false;
 
 	var data = {
 		street1 	: { type: String },
@@ -48,6 +49,10 @@ module.exports = function addressPlugin (schema, options) {
 
 	if(type) {
 		data.type = { type: String, enum: _.values(type) };
+	}
+
+	if(phone) {
+		data.phone = { type: String };
 	}
 
 	schema.path(path, data);
