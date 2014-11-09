@@ -24,7 +24,7 @@ module.exports = function addressPlugin (schema, options) {
 		street1 	: { type: String },
 		street2 	: { type: String },
 		city 		: { type: String },
-		boroughs    : { type: String },
+		district    : { type: String },
 		state 		: { type: String }, //TEXAS
 		zip 		: { type: String },
 		country     : { type: String } //USA
