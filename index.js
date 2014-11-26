@@ -55,7 +55,10 @@ module.exports = function addressPlugin (schema, options) {
 		data.phone = { type: String };
 	}
 
-	schema.path(path, data);
+	var subSchema = {};
+	subSchema[path] = data;
+
+	schema.add(subSchema);
 
 	return schema;
 };
