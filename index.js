@@ -12,46 +12,30 @@ module.exports = function addressPlugin (schema, options) {
 		options = {};
 	}
 
-	var path = options.path || 'address',
-		type = options.type || false,
-		primary = options.primary || false,
-		created = options.created || false,
-		numbers = options.numbers || false,
-		updated = options.updated || false,
-		phone = options.phone || false;
+	var path = options.path || 'address';
 
 	var data = {
-		street1 	: { type: String },
-		street2 	: { type: String },
-		city 		: { type: String },
-		district    : { type: String },
-		state 		: { type: String }, //TEXAS
-		zip 		: { type: String },
-		country     : { type: String } //USA
+		country       : { type: String }, //USA
+		state 		  : { type: String }, //TEXAS
+		county        : { type: String }, //
+		city 		  : { type: String }, //NY
+		district      : { type: String }, //brooklin
+		street1 	  : { type: String },
+		street1Number : { type: Number },
+		street2 	  : { type: String },
+		street2Number : { type: Number },
+		zip 		  : { type: String }
 	};
 
-	if(numbers) {
-		data.street1Number = { type: Number };
-		data.street2Number = { type: Number };
-	}
-
-	if(created) {
-		data.created = { type: Date, default: Date.now };
-	}
-
-	if(updated) {
-		data.updated = { type: Date, default: Date.now };
-	}
-
-	if(primary) {
+	if(options.primary) {
 		data.primary = { type: Boolean, default: false };
 	}
 
-	if(type) {
-		data.type = { type: String, enum: _.values(type) };
+	if(options.types) {
+		data.type = { type: String, enum: _.values(options.types) };
 	}
 
-	if(phone) {
+	if(options.phone) {
 		data.phone = { type: String };
 	}
 
